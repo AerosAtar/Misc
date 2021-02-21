@@ -4918,3 +4918,46 @@ Unloading 2 Unused Serialized files (Serialized files now loaded: 1)
 Unloading 3625 unused Assets to reduce memory usage. Loaded Objects now: 61897.
 Total: 1554.911200 ms (FindLiveObjects: 5.930100 ms CreateObjectMapping: 7.058300 ms MarkObjects: 1530.711400 ms  DeleteObjects: 11.210900 ms)
 
+(The following errors are spammed on attempted MapGen but do not get saved to the log for some reason - only appearing in the debug window)
+
+Could not regenerate layer Verse.SectionLayer_Terrain: System.NullReferenceException: Object reference not set to an instance of an object
+  at DubRoss.HarmonyPatches.<Regenerate>g__GetMaterialForCol|5_0 (Verse.TerrainDef terrain, Verse.IntVec3 c, DubRoss.HarmonyPatches+<>c__DisplayClass5_0& ) [0x00038] in <0f419faa2ad6471a84c9874ef4b19486>:0 
+  at DubRoss.HarmonyPatches.Regenerate (Verse.SectionLayer __instance) [0x0009a] in <0f419faa2ad6471a84c9874ef4b19486>:0 
+  at (wrapper dynamic-method) Verse.SectionLayer_Terrain.Verse.SectionLayer_Terrain.Regenerate_Patch1(Verse.SectionLayer_Terrain)
+  at Verse.Section.RegenerateAllLayers () [0x00023] in <c36f9493c9844ddaa7fb5c788416098f>:0 
+Verse.Log:Verse.Log.Error_Patch2(String, Boolean)
+Verse.Section:RegenerateAllLayers()
+Verse.MapDrawer:RegenerateEverythingNow()
+Verse.Map:<FinalizeInit>b__137_0()
+Verse.LongEventHandler:ExecuteToExecuteWhenFinished()
+Verse.LongEventHandler:UpdateCurrentAsynchronousEvent()
+Verse.LongEventHandler:LongEventsUpdate(Boolean&)
+Verse.Root:Verse.Root.Update_Patch1(Root)
+Verse.Root_Play:Verse.Root_Play.Update_Patch1(Root_Play)
+
+Could not regenerate layer Verse.SectionLayer_Watergen: System.NullReferenceException: Object reference not set to an instance of an object
+  at Verse.SectionLayer_Watergen.GetMaterialFor (Verse.TerrainDef terrain) [0x00000] in <c36f9493c9844ddaa7fb5c788416098f>:0 
+  at (wrapper dynamic-method) Verse.SectionLayer_Terrain.Verse.SectionLayer_Terrain.Regenerate_Patch1(Verse.SectionLayer_Terrain)
+  at Verse.Section.RegenerateAllLayers () [0x00023] in <c36f9493c9844ddaa7fb5c788416098f>:0 
+Verse.Log:Verse.Log.Error_Patch2(String, Boolean)
+Verse.Section:RegenerateAllLayers()
+Verse.MapDrawer:RegenerateEverythingNow()
+Verse.Map:<FinalizeInit>b__137_0()
+Verse.LongEventHandler:ExecuteToExecuteWhenFinished()
+Verse.LongEventHandler:UpdateCurrentAsynchronousEvent()
+Verse.LongEventHandler:LongEventsUpdate(Boolean&)
+Verse.Root:Verse.Root.Update_Patch1(Root)
+Verse.Root_Play:Verse.Root_Play.Update_Patch1(Root_Play)
+
+Could not regenerate layer DubsBadHygiene.SectionLayer_FertilizerGrid: System.NullReferenceException: Object reference not set to an instance of an object
+  at DubsBadHygiene.SectionLayer_FertilizerGrid.Regenerate () [0x000bb] in <2c04b7e74f2640aea5f4dff0bf76ef45>:0 
+  at Verse.Section.RegenerateAllLayers () [0x00023] in <c36f9493c9844ddaa7fb5c788416098f>:0 
+Verse.Log:Verse.Log.Error_Patch2(String, Boolean)
+Verse.Section:RegenerateAllLayers()
+Verse.MapDrawer:RegenerateEverythingNow()
+Verse.Map:<FinalizeInit>b__137_0()
+Verse.LongEventHandler:ExecuteToExecuteWhenFinished()
+Verse.LongEventHandler:UpdateCurrentAsynchronousEvent()
+Verse.LongEventHandler:LongEventsUpdate(Boolean&)
+Verse.Root:Verse.Root.Update_Patch1(Root)
+Verse.Root_Play:Verse.Root_Play.Update_Patch1(Root_Play)
