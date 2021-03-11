@@ -1,0 +1,46 @@
+	<!-- Humanoid Alien Races https://steamcommunity.com/sharedfiles/filedetails/?id=839005762 -->
+	<!-- Consolidate meat and leather types for all Humanlike races -->
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Humanoid Alien Races 2.0</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<!-- Replace alien meat by human meat(by changing of useMeatFrom) for every Alien Race. -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/race[contains(thinkTreeMain, "Humanlike")]/useMeatFrom</xpath>
+					<value>
+						<useMeatFrom>Human</useMeatFrom>
+					</value>
+				</li>
+				<!-- Replace alien meat by human meat(by addition of useMeatFrom change) for every Alien Race. -->
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace[defName!="Alien_Moyo" and defName]/race[contains(thinkTreeMain, "Humanlike") and not(useMeatFrom)]</xpath>
+					<value>
+						<useMeatFrom>Human</useMeatFrom>
+					</value>
+				</li>
+				<!-- Relabel human meat to make it more generic -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Human"]/race/meatLabel</xpath>
+					<value>
+						<meatLabel>humanoid meat</meatLabel>
+					</value>
+				</li>
+				<!-- Replace alien leather by human leather(by changing of leatherDef) for every Alien Race. -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/AlienRace.ThingDef_AlienRace/race[contains(thinkTreeMain, "Humanlike")]/leatherDef</xpath>
+					<value>
+						<leatherDef>Leather_Human</leatherDef>
+					</value>
+				</li>
+				<!-- Relabel human leather to make it more generic -->
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThingDef[defName="Leather_Human"]/label</xpath>
+					<value>
+						<label>humanoid leather</label>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
